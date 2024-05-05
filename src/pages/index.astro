@@ -13,18 +13,9 @@ import mockData from "@/data/mockData.json";
   </head>
   <body>
     <h1>Dashboard</h1>
-    <main class="grid">
+    <main class="grid grid-cols-fluid gap-4">
 
       {mockData.map((mock) => <Card {...mock} />)}
     </main>
   </body>
 </html>
-
-
-<style>
-  .grid {
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  }
-</style>

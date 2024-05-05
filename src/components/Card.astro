@@ -1,0 +1,20 @@
+---
+import { BarChart2 } from "lucide-astro";
+
+type Props = {
+  department: string;
+  description: string;
+  datasets: number;
+};
+
+const { department, datasets } = Astro.props;
+---
+
+<div class="rounded-lg border bg-card text-card-foreground shadow-sm p-4">
+  <div class="flex justify-between">
+    <h3 class="text-balance	">{department}</h3>
+    <BarChart2 size="20" />
+  </div>
+  <p class="mt-6 text-2xl font-bold">{datasets}</p>
+  <p class="text-xs text-gray-500">Datasets</p>
+</div>
