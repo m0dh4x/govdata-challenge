@@ -7,9 +7,12 @@ import type { GovData } from "types/types";
  * @returns Sorted array of government data.
  */
 
-export function sortData(list: GovData[], dir: "asc"): GovData[] {
+export function sortData(list: GovData[], dir: "asc" | "desc"): GovData[] {
   return list.sort((first, second) => {
+    if (dir === "asc") {
       return first.datasets - second.datasets;
-
+    } else {
+      return second.datasets - first.datasets;
+    }
   });
 }
