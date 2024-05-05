@@ -29,4 +29,13 @@ describe("sorts data in ascending order", () => {
     expect(sortedData[1].datasets).equal(722);
     expect(sortedData[2].datasets).equal(2372);
   });
+
+
+  it("sorts data in descending order", () => {
+    const sortedData = sortData(list, "desc");
+
+    expect(sortedData[0].datasets).equal(2372);
+    expect(sortedData[1].datasets).equal(722);
+    expect(sortedData[2].datasets).equal(662);
+  });
 });
