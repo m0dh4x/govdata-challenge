@@ -31,6 +31,8 @@ export const SortableCards = ({ govData }: SortableCardsProps) => {
       <div className="flex w-full justify-between items-center">
         <h1 className="text-4xl my-8">Dashboard</h1>
         <select
+          aria-label="Sort order"
+
           className="flex h-10 items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 w-[180px]"
           defaultValue={"desc"}
           onChange={(e) => setOrder(e.target.value as "asc" | "desc")}
