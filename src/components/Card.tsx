@@ -1,4 +1,3 @@
-import { BarChart2 } from "lucide-astro";
 import type { GovData } from "types/types";
 
 export const Card = ({ department, datasets }: GovData) => {
