@@ -9,7 +9,7 @@ type SortableCardsProps = {
 
 export const SortableCards = ({ govData }: CardsProps) => {
   const govDataCopy = [...govData];
-  const [order, setOrder] = useState<"asc" | "desc">("asc");
+  const [order, setOrder] = useState<"asc" | "desc">("desc");
   const [list, setList] = useState(govData);
 
   React.useEffect(() => {
@@ -17,21 +17,24 @@ export const SortableCards = ({ govData }: CardsProps) => {
     setList(sortedList);
   }, [govData, order]);
 
-
-  
-
   return (
     <>
-      <select
-        defaultValue={"asc"}
-        onChange={(e) => setOrder(e.target.value as "asc" | "desc")}
-      >
-        <option value="asc">Aufsteigend</option>
-        <option value="desc">Absteigend</option>
-      </select>
-      {list.map((item) => {
-        return <Card key={`${item.department}-${item.datasets}`} {...item} />;
-      })}
+      <div className="flex w-full justify-between items-center">
+        <h1 className="text-4xl my-8">Dashboard</h1>
+        <select
+          className="flex h-10 items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 w-[180px]"
+          defaultValue={"desc"}
+          onChange={(e) => setOrder(e.target.value as "asc" | "desc")}
+        >
+          <option value="desc">Absteigend</option>
+          <option value="asc">Aufsteigend</option>
+        </select>
+      </div>
+      <div className="grid grid-cols-fluid gap-4">
+        {list.map((item) => {
+          return <Card key={`${item.department}-${item.datasets}`} {...item} />;
+        })}
+      </div>
     </>
   );
 };
