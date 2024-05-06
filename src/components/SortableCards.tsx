@@ -17,14 +17,13 @@ export const SortableCards = ({ govData }: SortableCardsProps) => {
   useEffect(() => {
     const sortedList = sortData(govDataCopy, order);
     setList(sortedList);
-  }, [govData, order]);
-
 
     // Optional: Cleanup function if needed for cancelling fetch, evenListener etc.
-    // Note: e.g. like in the task described api usecase in a future 
+    // Note: e.g. like in the task described api usecase in a future
     return () => {
       // Cleanup code here, e.g., aborting a fetch request
     };
+  }, [govData, order]);
 
   return (
     <>
@@ -32,7 +31,6 @@ export const SortableCards = ({ govData }: SortableCardsProps) => {
         <h1 className="text-4xl my-8">Dashboard</h1>
         <select
           aria-label="Sort order"
-
           className="flex h-10 items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 w-[180px]"
           defaultValue={"desc"}
           onChange={(e) => setOrder(e.target.value as "asc" | "desc")}
