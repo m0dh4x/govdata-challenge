@@ -19,6 +19,13 @@ export const SortableCards = ({ govData }: SortableCardsProps) => {
     setList(sortedList);
   }, [govData, order]);
 
+
+    // Optional: Cleanup function if needed for cancelling fetch, evenListener etc.
+    // Note: e.g. like in the task described api usecase in a future 
+    return () => {
+      // Cleanup code here, e.g., aborting a fetch request
+    };
+
   return (
     <>
       <div className="flex w-full justify-between items-center">
