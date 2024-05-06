@@ -1,6 +1,6 @@
 ---
-import Card from "@/components/Card.astro";
-import mockData from "@/data/mockData.json";
+import govData from "@/data/mockData.json";
+import { SortableCards } from "@/components/SortableCards";
 ---
 
 <html lang="en">
@@ -11,11 +11,10 @@ import mockData from "@/data/mockData.json";
     <meta name="generator" content={Astro.generator} />
     <title>Dashboard</title>
   </head>
-  <body>
-    <h1>Dashboard</h1>
+  <body class="container mx-auto">
+    <h1 class="text-4xl my-8">Dashboard</h1>``
     <main class="grid grid-cols-fluid gap-4">
-
-      {mockData.map((mock) => <Card {...mock} />)}
+      <SortableCards govData={govData} client:load/>
     </main>
   </body>
 </html>
