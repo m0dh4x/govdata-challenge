@@ -1,47 +1,34 @@
-# Astro Starter Kit: Minimal
+
+# Project Documentation
+
+## Overview
+
+This project is a Astro based web application with React components that displays sortable cards containing government data. Each card represents a specific dataset from a government department, and users can sort these cards in ascending or descending order based on predefined criteria.
+
+## Features
+- **Sortable Cards**: Users can toggle the sorting order of the cards displaying government data.
+- **Responsive Design**: Ensures that the application is usable on both desktop and mobile devices.
+
+## Prerequisites
+Before you begin, ensure you have met the following requirements:
+- Node.js (v20.x or later)
+- npm (10.x or later) or Yarn (v1.22.x or later)
+
+## Installation Guide
+
+### Clone the repository
+To get started with the project, clone the repository to your local machine:
 
 ```sh
-npm create astro@latest -- --template minimal
+cd govdata-challenge
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+```sh
+pnpm i && pnpm run dev
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+or 
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+```sh
+rm -r pnpm-lock.yaml && npm i && npm run dev
+```
