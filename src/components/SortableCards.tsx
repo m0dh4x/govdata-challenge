@@ -1,18 +1,20 @@
-import React, { useState } from "react";
+import { useEffect, useState } from "react";
 import type { GovData } from "types/types";
+
 import { sortData } from "@/utils/sortData";
+
 import { Card } from "./Card";
 
 type SortableCardsProps = {
   govData: GovData[];
 };
 
-export const SortableCards = ({ govData }: CardsProps) => {
+export const SortableCards = ({ govData }: SortableCardsProps) => {
   const govDataCopy = [...govData];
   const [order, setOrder] = useState<"asc" | "desc">("desc");
   const [list, setList] = useState(govData);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const sortedList = sortData(govDataCopy, order);
     setList(sortedList);
   }, [govData, order]);
